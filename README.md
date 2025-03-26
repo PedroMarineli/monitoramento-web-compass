@@ -24,16 +24,22 @@
 
 ### 1. Configuração do Ambiente AWS
 **VPC**:  
-- 2 sub-redes públicas + 2 privadas  
+- 2 sub-redes públicas + 2 privadas <br>
+![VPC](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20115036.png)
+![VPC2](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20115040.png)
 
 **EC2**:  
-- AMI: Ubuntu 22.04 LTS  
-- Security Group: Liberar portas `80` (HTTP) e `22` (SSH)  
+- AMI: Ubuntu 22.04 LTS
+![AMI](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20114707.png)
+- Security Group: Liberar portas `80` (HTTP) e `22` (SSH)
+![rede](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20193642.png)
+![SG](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20115504.png)
 
 **Conexão SSH**:  
 ```bash
 ssh -i "sua-chave.pem" ubuntu@<IP_PUBLICO_EC2>
 ```
+![SSH](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20114750.png)
 
 ### 2. Configuração do Nginx
 **Instalação**:  
@@ -155,6 +161,8 @@ sudo nginx -s reload
 
 
 ### 3. Script de Monitoramento
+**Você pode obter a url do seu webhook na configurações de um canal no discord**:  
+![disc](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20202008.png)
 **Arquivo**: `/usr/local/bin/monitor.sh`  
 ```bash
 #!/bin/bash
@@ -201,7 +209,6 @@ tail -f /var/log/monitoramento.log
 ```
 
 **Saída esperada**:  
-```
-ALERTA: Site indisponível. Status: 000
-```
+![alerta1](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20202815.png)
+![alerta2](https://github.com/PedroMarineli/monitoramento-web-compass/blob/main/img/Captura%20de%20tela%202025-03-25%20202827.png)
 
