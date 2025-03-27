@@ -15,7 +15,7 @@
 
 
 ## 🛠 Pré-requisitos
-- Conta AWS (Free Tier) <br> site oficial da aws: https://aws.amazon.com/pt/
+- Conta AWS  <br> site oficial da aws: https://aws.amazon.com/pt/
 - Canal no Discord para webhook <br> site oficial do discord: https://discord.com/
 
 
