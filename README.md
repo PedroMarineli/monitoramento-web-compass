@@ -187,7 +187,7 @@ fi
 
 **Permissões para o script**:  
 ```bash
-sudo chmod +x /usr/local/bin/monitor_nginx.sh
+sudo chmod +x /usr/local/bin/monitor.sh
 ```
 
 **Abra o crontab**:  
